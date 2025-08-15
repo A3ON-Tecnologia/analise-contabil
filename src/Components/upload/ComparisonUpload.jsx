@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Upload, FileText, GitCompareArrows, User } from "lucide-react";
 
-const UploadSlot = ({ file, setFile, period, setPeriod, title, id, dragActive, onDragEnter, onDragLeave, onDrop }) => {
+const UploadSlot = ({ file, setFile, period, setPeriod, title, dragActive, onDragEnter, onDragLeave, onDrop }) => {
   const fileInputRef = useRef(null);
 
   const handleFileSelect = (e) => {
@@ -83,12 +83,12 @@ export default function ComparisonUpload({ fileA, setFileA, fileB, setFileB, per
           />
         </div>
         <div className="grid md:grid-cols-2 gap-6 items-center">
-          <UploadSlot 
-            file={fileA} setFile={setFileA} period={periodA} setPeriod={setPeriodA} title="Período A (Base)" id="A"
+          <UploadSlot
+            file={fileA} setFile={setFileA} period={periodA} setPeriod={setPeriodA} title="Período A (Base)"
             dragActive={dragA} onDragEnter={() => setDragA(true)} onDragLeave={() => setDragA(false)} onDrop={(e) => { e.preventDefault(); setDragA(false); if(e.dataTransfer.files[0]) setFileA(e.dataTransfer.files[0]) }}
           />
-          <UploadSlot 
-            file={fileB} setFile={setFileB} period={periodB} setPeriod={setPeriodB} title="Período B (Comparação)" id="B"
+          <UploadSlot
+            file={fileB} setFile={setFileB} period={periodB} setPeriod={setPeriodB} title="Período B (Comparação)"
             dragActive={dragB} onDragEnter={() => setDragB(true)} onDragLeave={() => setDragB(false)} onDrop={(e) => { e.preventDefault(); setDragB(false); if(e.dataTransfer.files[0]) setFileB(e.dataTransfer.files[0]) }}
           />
         </div>

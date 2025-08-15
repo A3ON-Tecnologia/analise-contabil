@@ -7,11 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Search, FileText, TrendingUp, Download, Calendar, GitCompareArrows } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
 
-import ReportCard from "../components/reports/ReportCard";
-import ComparisonDetailView from "../components/reports/ComparisonDetailView";
+import ReportCard from "../Components/reports/ReportCard";
+import ComparisonDetailView from "../Components/reports/ComparisonDetailView";
 
 export default function ReportsPage() {
   const navigate = useNavigate();

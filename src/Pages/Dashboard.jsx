@@ -5,11 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { GitCompareArrows, TrendingUp, FileText, DollarSign, Activity, ArrowUpRight, ArrowDownRight } from "lucide-react";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
 
-import ExecutiveKPIs from "../components/dashboard/ExecutiveKPIs";
-import ClientList from "../components/dashboard/ClientList";
+import ExecutiveKPIs from "../Components/dashboard/ExecutiveKPIs";
+import ClientList from "../Components/dashboard/ClientList";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Dashboard() {

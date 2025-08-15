@@ -5,8 +5,8 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, User, GitCompareArrows } from "lucide-react";
-import ReportCard from "../components/reports/ReportCard";
-import ComparisonDetailView from "../components/reports/ComparisonDetailView";
+import ReportCard from "../Components/reports/ReportCard";
+import ComparisonDetailView from "../Components/reports/ComparisonDetailView";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function ClientDetailPage() {

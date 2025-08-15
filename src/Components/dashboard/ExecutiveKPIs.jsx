@@ -3,22 +3,22 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, GitCompareArrows, CheckCircle } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const KPICard = ({ title, value, icon: Icon, gradient, subtitle, positive = true }) => (
+const KPICard = ({ title, value, icon, gradient, subtitle, positive = true }) => (
   <Card className="relative overflow-hidden border-0 shadow-xl bg-white/90 backdrop-blur-sm">
-    <div className={`absolute top-0 right-0 w-32 h-32 opacity-10 ${gradient} rounded-full transform translate-x-8 -translate-y-8`} />
-    <CardHeader className="pb-2">
-      <div className={`p-3 rounded-xl ${gradient} bg-opacity-15 inline-block`}>
-        <Icon className={`w-6 h-6 text-white`} />
-      </div>
-    </CardHeader>
-    <CardContent>
-      <div className="space-y-1">
-        <p className="text-sm font-medium text-slate-600">{title}</p>
-        <p className={`text-2xl font-bold ${positive ? 'text-emerald-600' : 'text-red-600'}`}>{value}</p>
-        {subtitle && <p className="text-xs text-slate-500">{subtitle}</p>}
-      </div>
-    </CardContent>
-  </Card>
+      <div className={`absolute top-0 right-0 w-32 h-32 opacity-10 ${gradient} rounded-full transform translate-x-8 -translate-y-8`} />
+      <CardHeader className="pb-2">
+        <div className={`p-3 rounded-xl ${gradient} bg-opacity-15 inline-block`}>
+          {React.createElement(icon, { className: 'w-6 h-6 text-white' })}
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-1">
+          <p className="text-sm font-medium text-slate-600">{title}</p>
+          <p className={`text-2xl font-bold ${positive ? 'text-emerald-600' : 'text-red-600'}`}>{value}</p>
+          {subtitle && <p className="text-xs text-slate-500">{subtitle}</p>}
+        </div>
+      </CardContent>
+    </Card>
 );
 
 export default function ExecutiveKPIs({ kpis, isLoading }) {

@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { ComparisonReport } from "@/entities/ComparisonReport";
 import { UploadFile, InvokeLLM } from "@/integrations/Core";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,9 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 
-import ComparisonUpload from "../components/upload/ComparisonUpload";
-import ProcessingStatus from "../Components/upload/ProcessingStatus.jsx";
-import ComparisonPreview from "../components/upload/ComparisonPreview";
+import ComparisonUpload from "../Components/upload/ComparisonUpload";
+import ProcessingStatus from "../Components/upload/ProcessingStatus";
+import ComparisonPreview from "../Components/upload/ComparisonPreview";
 
 export default function UploadPage() {
   const navigate = useNavigate();
@@ -21,7 +21,6 @@ export default function UploadPage() {
   const [periodB, setPeriodB] = useState("");
   const [clientName, setClientName] = useState(""); // New state for client name
   const [error, setError] = useState(null);
-  const [processing, setProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [comparisonData, setComparisonData] = useState(null);
   const [currentStep, setCurrentStep] = useState("upload");
@@ -32,7 +31,6 @@ export default function UploadPage() {
       return;
     }
 
-    setProcessing(true);
     setProgress(0);
     setCurrentStep("processing");
 
@@ -124,7 +122,7 @@ Calcule e forneça o seguinte, em formato JSON:
       setError("Erro ao processar a comparação: " + err.message);
       setCurrentStep("upload");
     } finally {
-      setProcessing(false);
+      // no-op
     }
   };
   
