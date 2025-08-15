@@ -6,7 +6,7 @@ import Dashboard from './Pages/Dashboard.jsx';
 import Upload from './Pages/Upload.jsx';
 import Reports from './Pages/Reports.jsx';
 import CientDetail from './Pages/CientDetail.jsx';
-import Layout from './Layout.js';
+import Layout from './Layout.jsx';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
