@@ -1,0 +1,127 @@
+{
+  "name": "ComparisonReport",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "description": "Nome do cliente para quem a análise foi feita"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Nome da empresa analisada no balancete"
+    },
+    "period_a_name": {
+      "type": "string"
+    },
+    "period_b_name": {
+      "type": "string"
+    },
+    "file_a_url": {
+      "type": "string"
+    },
+    "file_b_url": {
+      "type": "string"
+    },
+    "period_a_data": {
+      "type": "object",
+      "properties": {
+        "revenue": {
+          "type": "number"
+        },
+        "net_income": {
+          "type": "number"
+        },
+        "total_assets": {
+          "type": "number"
+        },
+        "equity": {
+          "type": "number"
+        },
+        "current_assets": {
+          "type": "number"
+        },
+        "current_liabilities": {
+          "type": "number"
+        }
+      }
+    },
+    "period_b_data": {
+      "type": "object",
+      "properties": {
+        "revenue": {
+          "type": "number"
+        },
+        "net_income": {
+          "type": "number"
+        },
+        "total_assets": {
+          "type": "number"
+        },
+        "equity": {
+          "type": "number"
+        },
+        "current_assets": {
+          "type": "number"
+        },
+        "current_liabilities": {
+          "type": "number"
+        }
+      }
+    },
+    "comparison_analysis": {
+      "type": "object",
+      "properties": {
+        "revenue_growth": {
+          "type": "number"
+        },
+        "net_income_growth": {
+          "type": "number"
+        },
+        "profit_margin_a": {
+          "type": "number"
+        },
+        "profit_margin_b": {
+          "type": "number"
+        },
+        "liquidity_ratio_a": {
+          "type": "number"
+        },
+        "liquidity_ratio_b": {
+          "type": "number"
+        },
+        "executive_summary": {
+          "type": "string"
+        },
+        "key_variations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "change_percentage": {
+                "type": "number"
+              },
+              "comment": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "strategic_recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "client_name",
+    "company_name",
+    "period_a_name",
+    "period_b_name"
+  ]
+}
