@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { BarChart3, Upload, FileText, TrendingUp, Settings, GitCompareArrows } from "lucide-react";
+import { BarChart3, FileText, TrendingUp, GitCompareArrows } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -36,7 +36,7 @@ const navigationItems = [
   },
 ];
 
-export default function Layout({ children }) {
+export default function Layout({ children, onLogout }) {
   const location = useLocation();
 
   return (
@@ -119,7 +119,7 @@ export default function Layout({ children }) {
           </SidebarContent>
 
           <SidebarFooter className="border-t border-slate-200/60 p-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 w-full">
               <div className="w-9 h-9 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center">
                 <span className="text-slate-700 font-semibold text-sm">U</span>
               </div>
@@ -127,6 +127,14 @@ export default function Layout({ children }) {
                 <p className="font-semibold text-slate-900 text-sm truncate">Usuário</p>
                 <p className="text-xs text-slate-500 truncate">Analista Financeiro</p>
               </div>
+              {onLogout && (
+                <button
+                  onClick={onLogout}
+                  className="text-sm text-slate-600 hover:text-slate-900"
+                >
+                  Sair
+                </button>
+              )}
             </div>
           </SidebarFooter>
         </Sidebar>
