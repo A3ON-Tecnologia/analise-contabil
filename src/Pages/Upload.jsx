@@ -9,9 +9,9 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 
-import ComparisonUpload from "../Components/upload/ComparisonUpload";
-import ProcessingStatus from "../Components/upload/ProcessingStatus";
-import ComparisonPreview from "../Components/upload/ComparisonPreview";
+import ComparisonUpload from "../components/upload/ComparisonUpload";
+import ProcessingStatus from "../components/upload/ProcessingStatus";
+import ComparisonPreview from "../components/upload/ComparisonPreview";
 
 export default function UploadPage() {
   const navigate = useNavigate();

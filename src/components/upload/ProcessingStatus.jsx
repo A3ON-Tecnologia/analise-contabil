@@ -4,10 +4,10 @@ import { Progress } from "@/components/ui/progress";
 import { FileText, Search, BarChart3, CheckCircle } from "lucide-react";
 
 const steps = [
-  { id: 1, name: "Upload do arquivo", icon: FileText, threshold: 20 },
-  { id: 2, name: "Extração de dados", icon: Search, threshold: 60 },
-  { id: 3, name: "Análise financeira", icon: BarChart3, threshold: 90 },
-  { id: 4, name: "Finalização", icon: CheckCircle, threshold: 100 },
+  { name: "Upload do arquivo", icon: FileText, threshold: 20 },
+  { name: "Extração de dados", icon: Search, threshold: 60 },
+  { name: "Análise financeira", icon: BarChart3, threshold: 90 },
+  { name: "Finalização", icon: CheckCircle, threshold: 100 },
 ];
 
 export default function ProcessingStatus({ progress }) {
@@ -37,7 +37,7 @@ export default function ProcessingStatus({ progress }) {
             
             return (
               <div
-                key={step.id}
+                key={step.name}
                 className={`flex items-center gap-4 p-4 rounded-lg transition-all duration-300 ${
                   isActive 
                     ? "bg-blue-50 border-l-4 border-blue-500" 

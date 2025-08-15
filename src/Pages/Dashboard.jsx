@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { GitCompareArrows, TrendingUp, FileText, DollarSign, Activity, ArrowUpRight, ArrowDownRight } from "lucide-react";
 
-import ExecutiveKPIs from "../Components/dashboard/ExecutiveKPIs";
-import ClientList from "../Components/dashboard/ClientList";
+import ExecutiveKPIs from "../components/dashboard/ExecutiveKPIs";
+import ClientList from "../components/dashboard/ClientList";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Dashboard() {

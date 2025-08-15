@@ -8,8 +8,8 @@ import { ArrowLeft, Search, FileText, TrendingUp, Download, Calendar, GitCompare
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 
-import ReportCard from "../Components/reports/ReportCard";
-import ComparisonDetailView from "../Components/reports/ComparisonDetailView";
+import ReportCard from "../components/reports/ReportCard";
+import ComparisonDetailView from "../components/reports/ComparisonDetailView";
 
 export default function ReportsPage() {
   const navigate = useNavigate();
